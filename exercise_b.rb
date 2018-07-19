@@ -1,14 +1,3 @@
-# Complete these tasks:
-# Get Jonathan's Twitter handle (i.e. the string "jonnyt")
-# Get Erik's hometown
-# Get the array of Erik's lottery numbers
-# Get the type of Avril's pet Monty
-# Get the smallest of Erik's lottery numbers
-# Return an array of Avril's lottery numbers that are even
-# Erik is one lottery number short! Add the number 7 to be included in his lottery numbers
-# Change Erik's hometown to Edinburgh
-# Add a pet dog to Erik called "Fluffy"
-# Add another person to the users hash
 users = {
   "Jonathan" => {
     :twitter => "jonnyt",
@@ -64,3 +53,25 @@ users = {
     ]
   }
 }
+
+# Get Jonathan's Twitter handle (i.e. the string "jonnyt")
+# p users.fetch_values("Jonathan")
+p users ["Jonathan"][:twitter]
+# Get Erik's hometown
+p users ["Erik"][:home_town]
+# Get the array of Erik's lottery numbers
+p users ["Erik"] [:lottery_numbers]
+# Get the type of Avril's pet Monty
+p users ["Avril"] [:pets]
+# Get the smallest of Erik's lottery numbers
+p users ["Erik"] [:lottery_numbers].min
+# Return an array of Avril's lottery numbers that are even
+p users ["Avril"] [:lottery_numbers].select {|num| num.even? }
+# Erik is one lottery number short! Add the number 7 to be included in his lottery numbers
+p users ["Erik"] [:lottery_numbers].push(7)
+# Change Erik's hometown to Edinburgh
+p users ["Erik"] [:home_town].replace("Edinburgh")
+# Add a pet dog to Erik called "Fluffy"
+# --> tried it with this: p. users ["Erik"] [:pets].map{|x| x == "spike" ? '"spike", "Fluffy"' : x}
+# -->tried it with this as well: p users ["Erik"] [:pets] [:name].replace("monty", "Fluffy")
+# Add another person to the users hash
